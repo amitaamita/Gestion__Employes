@@ -6,10 +6,9 @@ class GestionDepartements:
     def __init__(self, gestion_emp):
         self.departements = {}  # Dictionnaire {code: objet Departement}
         self.gestion_emp = gestion_emp
-        self.charger()  # NOUVEAU : On charge les départements dès le lancement !
+        self.charger()  # On charge les données au démarrage
 
     def charger(self):
-        """NOUVEAU : Lit le fichier JSON au démarrage pour récupérer les données."""
         if os.path.exists("departements.json"):
             try:
                 with open("departements.json", "r", encoding="utf-8") as f:
@@ -20,7 +19,7 @@ class GestionDepartements:
                 print(f"Erreur lors du chargement des départements : {e}")
 
     def afficher_sous_menu(self):
-        while True:
+        while True:  # <--- LA LIGNE QUI MANQUAIT !
             print("\n--- GESTION DES DÉPARTEMENTS ---")
             print("1. Ajouter un département")
             print("2. Supprimer un département")
@@ -61,7 +60,6 @@ class GestionDepartements:
                 print("Choix invalide, veuillez réessayer.")
 
     def sauvegarder(self):
-        """Transforme les objets en dictionnaires et sauvegarde avec gestion des accents."""
         data = {code: {"nom": dept.nom} for code, dept in self.departements.items()}
         try:
             with open("departements.json", "w", encoding="utf-8") as f:
