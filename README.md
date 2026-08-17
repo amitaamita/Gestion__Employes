@@ -1,6 +1,3 @@
-Le prof a donné une liste très précise de ce qu'il veut dans le `README.md`. C'est la "vitrine" de votre projet. Ne laisse surtout pas le texte par défaut de GitHub !
-
-Voici **exactement** ce que tu dois copier-coller à l'intérieur de ton fichier `README.md` sur GitHub. J'ai respecté **chaque point** demandé dans le cahier des charges.
 
 ### Comment faire :
 1. Va sur la page principale de ton dépôt GitHub.
@@ -88,4 +85,3 @@ Ce projet a été développé de manière collaborative par :
 
 ***
 
-Une fois que tu auras cliqué sur "Commit changes", ton dépôt GitHub aura l'air hyper professionnel et le prof verra que tu as lu et respecté son cahier des charges jusqu'au bout !
