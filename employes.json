@@ -1,0 +1,35 @@
+{
+    "002": {
+        "nom": "diediou",
+        "prenom": "laila",
+        "age": 22,
+        "sexe": "feminin",
+        "adresse": "rufisque",
+        "tel": "708899876",
+        "poste": "123456",
+        "salaire": 200000.0,
+        "code_dept": "123"
+    },
+    "001": {
+        "nom": "diop",
+        "prenom": "ndeye anta",
+        "age": 24,
+        "sexe": "feminin",
+        "adresse": "dakar",
+        "tel": "784760327",
+        "poste": "1234",
+        "salaire": 200000.0,
+        "code_dept": "1234"
+    },
+    "003": {
+        "nom": "diop",
+        "prenom": "faty",
+        "age": 30,
+        "sexe": "f",
+        "adresse": "touba",
+        "tel": "776789866",
+        "poste": "1234",
+        "salaire": 300000.0,
+        "code_dept": "123"
+    }
+}
