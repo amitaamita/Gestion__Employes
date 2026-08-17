@@ -1,10 +1,23 @@
 import json
+import os
 from departement import Departement
 
 class GestionDepartements:
     def __init__(self, gestion_emp):
         self.departements = {}  # Dictionnaire {code: objet Departement}
-        self.gestion_emp = gestion_emp  # Au cas où tu veux vérifier si un dept a des employés avant de le supprimer
+        self.gestion_emp = gestion_emp
+        self.charger()  # NOUVEAU : On charge les départements dès le lancement !
+
+    def charger(self):
+        """NOUVEAU : Lit le fichier JSON au démarrage pour récupérer les données."""
+        if os.path.exists("departements.json"):
+            try:
+                with open("departements.json", "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    for code, info in data.items():
+                        self.departements[code] = Departement(code, info["nom"])
+            except Exception as e:
+                print(f"Erreur lors du chargement des départements : {e}")
 
     def afficher_sous_menu(self):
         while True:
@@ -48,10 +61,9 @@ class GestionDepartements:
                 print("Choix invalide, veuillez réessayer.")
 
     def sauvegarder(self):
-        # On transforme les objets en dictionnaires simples pour le fichier JSON
+        """Transforme les objets en dictionnaires et sauvegarde avec gestion des accents."""
         data = {code: {"nom": dept.nom} for code, dept in self.departements.items()}
         try:
-            # encoding='utf-8' et ensure_ascii=False sont ajoutés pour ne pas avoir de problèmes avec les accents (é, è, etc.)
             with open("departements.json", "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=4, ensure_ascii=False)
         except Exception as e:
